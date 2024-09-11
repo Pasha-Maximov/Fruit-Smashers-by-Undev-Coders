@@ -1,0 +1,174 @@
+.wrapper{
+    height:100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom:0;
+    right:0;
+    position: absolute;
+    background: linear-gradient(124deg ,#ff2400, #ff2400, #e81d1d, #e81d1d, #e8b71d, #e8b71d, #e3e81d, #e3e81d, #1de840, #1de840, #1ddde8, #1ddde8, #2b1de8, #2b1de8, #dd00f3, #dd00f3, #ff2400, #ff2400);
+    background-size: 1800% 1800%;
+    animation: rainbow 200s ease infinite;
+}
+
+@keyframes srainbow { 
+    0% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes rainbow { 
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #b0baff;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    position: absolute;
+    top: 10px;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    color: #ffffff; 
+}
+
+h2 {
+    position: absolute;
+    top: 140px;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    color: #ffffff; 
+}
+
+h3 {
+    position: absolute;
+    top: 425px;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    color: #ffffff; 
+}
+
+h4 {
+    position: absolute;
+    top: 130px;
+    left: 1415px;
+    font-size: 20px;
+    width: 100%;
+    color: #ffffff; 
+}
+
+h5 {
+    position: absolute;
+    top: 122.5px;
+    left: 1227.5px;
+    font-size: 20px;
+    width: 100%;
+    color: #ffffff; 
+}
+
+.canvas1 {
+    border: 2px solid #333;
+    border-radius: 20px;
+    background:linear-gradient(124deg ,#ff2400, #ff2400, #e81d1d, #e81d1d, #e8b71d, #e8b71d, #e3e81d, #e3e81d, #1de840, #1de840, #1ddde8, #1ddde8, #2b1de8, #2b1de8, #dd00f3, #dd00f3, #ff2400, #ff2400);
+    background-size: 1800% 1800%;
+    animation: srainbow 144s ease infinite;
+    position: absolute;
+}
+
+.canvas2 {
+    border: 2px solid #333;
+    border-radius: 15px;
+    background:linear-gradient(124deg ,#ff2400, #ff2400, #e81d1d, #e81d1d, #e8b71d, #e8b71d, #e3e81d, #e3e81d, #1de840, #1de840, #1ddde8, #1ddde8, #2b1de8, #2b1de8, #dd00f3, #dd00f3, #ff2400, #ff2400);
+    background-size: 1800% 1800%;
+    animation: srainbow 90s ease infinite;
+    position: absolute;
+}
+
+.canvas3 {
+    border: 2px solid #333;
+    border-radius: 15px;
+    background:linear-gradient(124deg ,#ff2400, #ff2400, #e81d1d, #e81d1d, #e8b71d, #e8b71d, #e3e81d, #e3e81d, #1de840, #1de840, #1ddde8, #1ddde8, #2b1de8, #2b1de8, #dd00f3, #dd00f3, #ff2400, #ff2400);
+    background-size: 1800% 1800%;
+    animation: srainbow 90s ease infinite;
+    position: absolute;
+    left:62%;
+}
+
+.canvas4 {
+    border: 2px solid #333;
+    border-radius: 15px;
+    background:linear-gradient(124deg ,#ff2400, #ff2400, #e81d1d, #e81d1d, #e8b71d, #e8b71d, #e3e81d, #e3e81d, #1de840, #1de840, #1ddde8, #1ddde8, #2b1de8, #2b1de8, #dd00f3, #dd00f3, #ff2400, #ff2400);
+    background-size: 1800% 1800%;
+    animation: srainbow 90s ease infinite;
+    position: absolute;
+    left: 19.5%;
+}
+
+.canvas5 {
+    border: 2px solid #333;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    position: absolute;
+    left: 62.80%;
+    overflow-y: auto;
+}
+
+.canvas6 {
+    border: 2px solid #333;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    position: absolute;
+    left: 71.55%;
+    overflow-y: scroll;
+}
+
+.canvas7 {
+    border: 2px solid #333;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    position: absolute;
+    left: 42.%;
+    top: 20%
+}
+
+.canvas8 {
+    border: 2px solid #333;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    position: absolute;
+    left: 42.%;
+    top: 52%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
