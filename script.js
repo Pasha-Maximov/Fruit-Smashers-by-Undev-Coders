@@ -56,25 +56,7 @@ canvas8.height = HEIGHT8;
 ctx6.fillStyle = 'white';
 ctx6.font = '20px Arial';
 ctx6.textAlign = 'center';
-ctx6.fillText('Cranberry', 70, 25);
-ctx6.fillText('Blueberry', 70, 55);
-ctx6.fillText('Blueberry', 70, 85);
-ctx6.fillText('Blueberry', 70, 115);
-ctx6.fillText('Blueberry', 70, 145);
-ctx6.fillText('Blueberry', 70, 175);
-ctx6.fillText('Blueberry', 70, 205);
-ctx6.fillText('Blueberry', 70, 235);
-ctx6.fillText('Blueberry', 70, 265);
-ctx6.fillText('Blueberry', 70, 295);
-ctx6.fillText('Blueberry', 70, 325);
-ctx6.fillText('Blueberry', 70, 355);
-ctx6.fillText('Blueberry', 70, 385);
-ctx6.fillText('Blueberry', 70, 415);
-ctx6.fillText('Blueberry', 70, 445);
-ctx6.fillText('Blueberry', 70, 475);
-ctx6.fillText('Blueberry', 70, 505);
-ctx6.fillText('Blueberry', 70, 535);
-ctx6.fillText('Blueberry', 70, 565);
+
 
 
 
