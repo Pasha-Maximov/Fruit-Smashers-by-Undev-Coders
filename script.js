@@ -13,23 +13,7 @@ const HEIGHT2 = 600;
 
 
 
-let subcanvas = []
 
-
-
-function drawsubcanvas() {
-    subcanvas.forEach((subcanvas) => {
-        ctx.fillStyle = 'white';
-        ctx.fillRect(subcanvas.x, subcanvas.y, subcanvas.width, subcanvas.height);
-    });
-}
-
-
-
-
-ctx6.fillStyle = 'white';
-ctx6.font = '20px Arial';
-ctx6.textAlign = 'center';
 
 
 
