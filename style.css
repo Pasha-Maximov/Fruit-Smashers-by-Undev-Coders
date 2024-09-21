@@ -12,6 +12,8 @@
 
 }
 
+
+
 @keyframes srainbow { 
     0% {
         background-position: 100% 100%;
@@ -62,19 +64,11 @@ h2 {
     color: #ffffff; 
 }
 
-h3 {
-    position: fixed;
-    top: 330px;
-    font-size: 20px;
-    text-align: center;
-    width: 100%;
-    color: #ffffff; 
-}
 
 h4 {
     position: fixed;
     top: 22.5px;
-    left: 1195px;
+    left: 1175px;
     font-size: 20px;
     width: 100%;
     color: #ffffff; 
@@ -83,7 +77,7 @@ h4 {
 h5 {
     position: fixed;
     top: 14px;
-    left: 1000px;
+    left: 1005px;
     font-size: 20px;
     width: 100%;
     color: #ffffff; 
