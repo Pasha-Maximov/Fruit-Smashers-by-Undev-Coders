@@ -8,10 +8,10 @@ canvas.width = WIDTH;
 canvas.height = HEIGHT;
 
 const bowlphase0 = new Image();
-bowlphase0.src = 'bowl_phase_0-removebg-preview.pngghtning.png';
+bowlphase0.src = 'bowl_phase_0-removebg-preview.png';
 
 const bowlphase1 = new Image();
-bowlphase1.src = 'bowl_phase_1-removebg-preview.pngghtning.png';
+bowlphase1.src = 'bowl_phase_1-removebg-preview.png';
 
 
 
