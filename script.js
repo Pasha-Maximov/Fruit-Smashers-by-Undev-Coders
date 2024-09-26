@@ -277,7 +277,6 @@ canvas.addEventListener('click', function(event) {
     ) {
         bowlheight = 150
         bowlwidth = 150
-        t
     }
 });
 function getMousePos(canvas, evt) {
@@ -294,7 +293,7 @@ function gameloop() {
 
     draw();
 
-    
+
 
     requestAnimationFrame(gameloop); 
 }
