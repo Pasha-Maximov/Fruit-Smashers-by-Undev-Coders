@@ -55,106 +55,13 @@ h1 {
     color: #ffffff; 
 }
 
-h2 {
-    position: fixed;
-    top: 30px;
-    font-size: 20px;
-    text-align: center;
-    width: 100%;
-    color: #ffffff; 
-}
-
-
-h4 {
-    position: fixed;
-    top: 22.5px;
-    left: 1175px;
-    font-size: 20px;
-    width: 100%;
-    color: #ffffff; 
-}
-
-h5 {
-    position: fixed;
-    top: 14px;
-    left: 1005px;
-    font-size: 20px;
-    width: 100%;
-    color: #ffffff; 
-}
-
-.canvas1 {
+canvas {
     border: 2px solid #333;
     border-radius: 20px;
     background:linear-gradient(124deg ,#ff2400, #ff2400, #e81d1d, #e81d1d, #e8b71d, #e8b71d, #e3e81d, #e3e81d, #1de840, #1de840, #1ddde8, #1ddde8, #2b1de8, #2b1de8, #dd00f3, #dd00f3, #ff2400, #ff2400);
     background-size: 1800% 1800%;
     animation: srainbow 144s ease infinite;
     position: fixed;
-}
-
-.canvas2 {
-    border: 2px solid #333;
-    border-radius: 15px;
-    background:linear-gradient(124deg ,#ff2400, #ff2400, #e81d1d, #e81d1d, #e8b71d, #e8b71d, #e3e81d, #e3e81d, #1de840, #1de840, #1ddde8, #1ddde8, #2b1de8, #2b1de8, #dd00f3, #dd00f3, #ff2400, #ff2400);
-    background-size: 1800% 1800%;
-    animation: srainbow 90s ease infinite;
-    position: fixed;
-}
-
-.canvas3 {
-    border: 2px solid #333;
-    border-radius: 15px;
-    background:linear-gradient(124deg ,#ff2400, #ff2400, #e81d1d, #e81d1d, #e8b71d, #e8b71d, #e3e81d, #e3e81d, #1de840, #1de840, #1ddde8, #1ddde8, #2b1de8, #2b1de8, #dd00f3, #dd00f3, #ff2400, #ff2400);
-    background-size: 1800% 1800%;
-    animation: srainbow 90s ease infinite;
-    position: fixed;
-    left:62.3%;
-}
-
-.canvas4 {
-    border: 2px solid #333;
-    border-radius: 15px;
-    background:linear-gradient(124deg ,#ff2400, #ff2400, #e81d1d, #e81d1d, #e8b71d, #e8b71d, #e3e81d, #e3e81d, #1de840, #1de840, #1ddde8, #1ddde8, #2b1de8, #2b1de8, #dd00f3, #dd00f3, #ff2400, #ff2400);
-    background-size: 1800% 1800%;
-    animation: srainbow 90s ease infinite;
-    position: fixed;
-    left: 14.7%;
-}
-
-.canvas5 {
-    border: 2px solid #333;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    position: fixed;
-    left: 63.1%;
-    overflow-y: scroll;
-}
-
-.canvas6 {
-    border: 2px solid #333;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    position: fixed;
-    left: 74.5%;
-    overflow-y: scroll;
-}
-
-.canvas7 {
-    border: 2px solid #333;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    position: fixed;
-    left: 42.%;
-    top: 10%
-}
-
-.canvas8 {
-    border: 2px solid #333;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    position: fixed;
-    left: 42.%;
-    top: 54%;
 }
 
 
