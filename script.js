@@ -16,8 +16,9 @@ bowlphase1.src = 'bowlphase1.png';
 
 let bowlheight = 200
 let bowlwidth = 200
-let bowlX = 0
-let bowlY = 0
+let bowlX = 97.5
+let bowlY = 200
+let bowl = bowlphase0
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -258,14 +259,24 @@ function draw() {
 
     ctx.fillStyle = 'white'
     ctx.font= '28px bold arial'
-    ctx.fillText('_{amount}_ _{currency/units}_', 90, 120);
+    ctx.fillText('_{amount}_', 125, 120);
+
+    ctx.fillStyle = 'white'
+    ctx.font= '28px bold arial'
+    ctx.fillText('_{currency/units}_', 90, 150);
 
 
-    ctx.drawImage(bowlphase0, bowlX, bowlY, bowlheight, bowlheight)
+    ctx.drawImage(bowl, bowlX, bowlY, bowlheight, bowlheight)
 
 }
 
 
+function resetbowl() {
+    bowlheight = 200
+    bowlwidth = 200
+    bowlX = 97.5
+    bowlY = 200
+}
 
 
 canvas.addEventListener('click', function(event) {
@@ -277,6 +288,9 @@ canvas.addEventListener('click', function(event) {
     ) {
         bowlheight = 150
         bowlwidth = 150
+        bowlX = 122.5
+        bowlY =  225
+        setTimeout(resetbowl, 1000)
     }
 });
 function getMousePos(canvas, evt) {
