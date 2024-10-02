@@ -326,7 +326,7 @@ function draw() {
 
     ctx.fillStyle = 'white'
     ctx.font= '28px bold arial'
-    ctx.fillText('_{currency/units}_', 90, 165);
+    ctx.fillText('Fruit Bux', 90, 165);
 
 
     ctx.drawImage(bowl, bowlX, bowlY, bowlheight, bowlheight)
