@@ -373,7 +373,10 @@ function draw() {
 function drawScore() {
     ctx.font = '25px Arial';
     ctx.fillStyle = 'black';
-    ctx.fillText(`${score}`, 187, 140);
+    let text = `${score}`
+    let metrics = ctx.measureText(text);
+    let textWidth = metrics.width;
+    ctx.fillText(`${score}`, (187 - (textWidth / 2)), 140);
 }
 
 function resetbowl() {
