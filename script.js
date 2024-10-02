@@ -13,12 +13,26 @@ bowlphase0.src = 'bowlphase0.png';
 const bowlphase1 = new Image();
 bowlphase1.src = 'bowlphase1.png';
 
+const bowlphase2 = new Image();
+bowlphase2.src = 'bowlphase2.png';
+
+const cranberry = new Image();
+cranberry.src = 'cranberry.png';
+
+const blueberry = new Image();
+blueberry.src = 'blueberry.png';
 
 let bowlheight = 200
 let bowlwidth = 200
 let bowlX = 97.5
 let bowlY = 200
 let bowl = bowlphase0
+let score = 0
+let cranberrybuyable = true
+let allowcranberryoverlay = false
+let blueberrybuyable = false
+let allowblueberryoverlay = false
+let scoreamplifier = 1
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -237,6 +251,45 @@ function draw() {
     ctx.fillRect(685, 265, 4, 54);
     ctx.fillRect(635, 315, 54, 4);
 
+    //fruits(icon outline)
+
+    ctx.fillStyle = 'rgba(255, 255, 255, 1';
+    ctx.fillRect(927, 57, 34, 34)
+    ctx.fillRect(972, 57, 34, 34)
+
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.5';
+    ctx.fillRect(927, 57, 34, 4)
+    ctx.fillRect(927, 57, 4, 34)
+    ctx.fillRect(957, 57, 4, 34)
+    ctx.fillRect(927, 87, 34, 4)
+
+    ctx.fillRect(972, 57, 34, 4)
+    ctx.fillRect(972, 57, 4, 34)
+    ctx.fillRect(1002, 57, 4, 34)
+    ctx.fillRect(972, 87, 34, 4)
+
+    ctx.fillRect(1017, 57, 34, 4)
+    ctx.fillRect(1017, 57, 4, 34)
+    ctx.fillRect(1047, 57, 4, 34)
+    ctx.fillRect(1017, 87, 34, 4)
+
+    ctx.fillRect(927, 102, 34, 4)
+    ctx.fillRect(927, 102, 4, 34)
+    ctx.fillRect(957, 102, 4, 34)
+    ctx.fillRect(927, 132, 34, 4)
+
+    ctx.fillRect(972, 102, 34, 4)
+    ctx.fillRect(972, 102, 4, 34)
+    ctx.fillRect(1002, 102, 4, 34)
+    ctx.fillRect(972, 132, 34, 4)
+
+    ctx.fillRect(1017, 102, 34, 4)
+    ctx.fillRect(1017, 102, 4, 34)
+    ctx.fillRect(1047, 102, 4, 34)
+    ctx.fillRect(1017, 132, 34, 4)
+
+    
+
     ctx.fillStyle = 'white'
     ctx.font= '25px bold arial'
     ctx.fillText('Achievements', 485, 350);
@@ -255,21 +308,51 @@ function draw() {
 
     ctx.fillStyle = 'white'
     ctx.font= '30px bold arial'
-    ctx.fillText('______`s Fruit Salad', 80, 70);
+    ctx.fillText('`s', 300, 65);
+
+    ctx.fillStyle = 'white'
+    ctx.font= '30px bold arial'
+    ctx.fillText('Fruit Salad', 130, 100);
+    
 
     ctx.fillStyle = 'white'
     ctx.font= '28px bold arial'
-    ctx.fillText('_{amount}_', 125, 120);
-
-    ctx.fillStyle = 'white'
-    ctx.font= '28px bold arial'
-    ctx.fillText('_{currency/units}_', 90, 150);
+    ctx.fillText('_{currency/units}_', 90, 165);
 
 
     ctx.drawImage(bowl, bowlX, bowlY, bowlheight, bowlheight)
+    ctx.drawImage(cranberry, 927, 57, 34, 34)
+    ctx.drawImage(blueberry, 974, 59, 30, 30)
 
+
+
+
+    if(blueberrybuyable == false && allowblueberryoverlay == false) {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'
+        ctx.fillRect(972, 57, 34, 34)
+    }
+
+
+    if(allowblueberryoverlay == true) {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+        ctx.fillRect(972, 57, 34, 34);
+        ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+        ctx.fillRect(967, 73, 44, 2);
+        }
+
+    if(allowcranberryoverlay == true) {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+        ctx.fillRect(927, 57, 34, 34);
+        ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+        ctx.fillRect(922, 73, 44, 2);
+        }
 }
 
+function drawScore() {
+    ctx.font = '25px Arial';
+    ctx.fillStyle = 'black';
+    ctx.fillText(`${score}`, 187, 140);
+}
 
 function resetbowl() {
     bowlheight = 200
@@ -278,6 +361,63 @@ function resetbowl() {
     bowlY = 200
 }
 
+function bowlsizetransition() {
+    bowlheight = 175
+    bowlwidth = 175
+    bowlX = 110
+    bowlY = 212.5
+}
+
+function clicksizebowl() {
+    bowlheight = 150
+    bowlwidth = 150
+    bowlX = 122.5
+    bowlY =  225
+}
+
+canvas.addEventListener('click', function(event) {
+    console.log(getMousePos(canvas, event))
+    const mousepos = getMousePos(canvas, event)
+    if(
+        927 < mousepos.x && mousepos.x < 957 + 34 &&
+        57 < mousepos.y && mousepos.y < 57 + 34
+    ) {
+        if(cranberrybuyable == false){
+            return
+        }
+        if (score <= 9){
+            return
+        }
+        cranberrybuyable = false
+        score = score - 10
+        bowl = bowlphase1
+        scoreamplifier = scoreamplifier + 2
+        allowcranberryoverlay = true
+        blueberrybuyable = true
+    }
+});
+
+canvas.addEventListener('click', function(event) {
+    console.log(getMousePos(canvas, event))
+    const mousepos = getMousePos(canvas, event)
+    if(
+        972 < mousepos.x && mousepos.x < 1002 + 34 &&
+        57 < mousepos.y && mousepos.y < 57 + 34
+    ) {
+        if(blueberrybuyable == false){
+            return
+        }
+        if (score <= 9){
+            return
+        }
+        blueberrybuyable = false
+        score = score - 10
+        bowl = bowlphase2
+        scoreamplifier = scoreamplifier + 10
+        allowblueberryoverlay = true
+
+    }
+});
 
 canvas.addEventListener('click', function(event) {
     console.log(getMousePos(canvas, event))
@@ -286,11 +426,12 @@ canvas.addEventListener('click', function(event) {
         bowlX < mousepos.x && mousepos.x < bowlX + bowlwidth &&
         bowlY < mousepos.y && mousepos.y < bowlY + bowlheight
     ) {
-        bowlheight = 150
-        bowlwidth = 150
-        bowlX = 122.5
-        bowlY =  225
-        setTimeout(resetbowl, 1000)
+        score = score + 1 * scoreamplifier
+        bowlsizetransition()
+        setTimeout(clicksizebowl, 150)
+        setTimeout(bowlsizetransition, 400)
+        setTimeout(resetbowl, 550)
+        
     }
 });
 function getMousePos(canvas, evt) {
@@ -304,9 +445,9 @@ function getMousePos(canvas, evt) {
 
 
 function gameloop() {
-
+    
     draw();
-
+    drawScore();
 
 
     requestAnimationFrame(gameloop); 

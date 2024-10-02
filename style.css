@@ -12,7 +12,19 @@
 
 }
 
-
+#Username {
+    position: relative;
+    top: -270px;
+    left: -370px;
+    width: 210px;
+    height: 30px;
+    color: white;
+    font: 30px bold arial;
+    background: rgba(0, 0, 0, 0);
+    border: rgba(0, 0, 0, 0);
+    text-align:end;
+    text-overflow: ellipsis;
+  }
 
 @keyframes srainbow { 
     0% {
