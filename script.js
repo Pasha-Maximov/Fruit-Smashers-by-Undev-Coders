@@ -16,11 +16,17 @@ bowlphase1.src = 'bowlphase1.png';
 const bowlphase2 = new Image();
 bowlphase2.src = 'bowlphase2.png';
 
+const bowlphase3 = new Image();
+bowlphase3.src = 'bowlphase3.png';
+
 const cranberry = new Image();
 cranberry.src = 'cranberry.png';
 
 const blueberry = new Image();
 blueberry.src = 'blueberry.png';
+
+const cherry = new Image();
+cherry.src = 'cherry.png';
 
 let bowlheight = 200
 let bowlwidth = 200
@@ -32,6 +38,8 @@ let cranberrybuyable = true
 let allowcranberryoverlay = false
 let blueberrybuyable = false
 let allowblueberryoverlay = false
+let cherrybuyable = false
+let allowcherryoverlay = false
 let scoreamplifier = 1
 
 function draw() {
@@ -256,6 +264,7 @@ function draw() {
     ctx.fillStyle = 'rgba(255, 255, 255, 1';
     ctx.fillRect(927, 57, 34, 34)
     ctx.fillRect(972, 57, 34, 34)
+    ctx.fillRect(1017, 57, 34, 34)
 
     ctx.fillStyle = 'rgba(0, 0, 0, 0.5';
     ctx.fillRect(927, 57, 34, 4)
@@ -323,7 +332,7 @@ function draw() {
     ctx.drawImage(bowl, bowlX, bowlY, bowlheight, bowlheight)
     ctx.drawImage(cranberry, 927, 57, 34, 34)
     ctx.drawImage(blueberry, 974, 59, 30, 30)
-
+    ctx.drawImage(cherry, 1015, 55, 36, 36)
 
 
 
@@ -332,20 +341,33 @@ function draw() {
         ctx.fillRect(972, 57, 34, 34)
     }
 
-
-    if(allowblueberryoverlay == true) {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
-        ctx.fillRect(972, 57, 34, 34);
-        ctx.fillStyle = 'rgba(0, 0, 0, 1)';
-        ctx.fillRect(967, 73, 44, 2);
-        }
+    if(cherrybuyable == false && allowcherryoverlay == false) {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'
+        ctx.fillRect(1017, 57, 34, 34)
+    }
 
     if(allowcranberryoverlay == true) {
         ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
         ctx.fillRect(927, 57, 34, 34);
         ctx.fillStyle = 'rgba(0, 0, 0, 1)';
         ctx.fillRect(922, 73, 44, 2);
-        }
+    }
+
+    if(allowblueberryoverlay == true) {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+        ctx.fillRect(972, 57, 34, 34);
+        ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+        ctx.fillRect(967, 73, 44, 2);
+    }
+
+    if(allowcherryoverlay == true) {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+        ctx.fillRect(1017, 57, 34, 34);
+        ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+        ctx.fillRect(1012, 73, 44, 2);
+    }
+
+    
 }
 
 function drawScore() {
@@ -375,11 +397,13 @@ function clicksizebowl() {
     bowlY =  225
 }
 
+
+
 canvas.addEventListener('click', function(event) {
     console.log(getMousePos(canvas, event))
     const mousepos = getMousePos(canvas, event)
     if(
-        927 < mousepos.x && mousepos.x < 957 + 34 &&
+        927 < mousepos.x && mousepos.x < 927 + 34 &&
         57 < mousepos.y && mousepos.y < 57 + 34
     ) {
         if(cranberrybuyable == false){
@@ -401,7 +425,7 @@ canvas.addEventListener('click', function(event) {
     console.log(getMousePos(canvas, event))
     const mousepos = getMousePos(canvas, event)
     if(
-        972 < mousepos.x && mousepos.x < 1002 + 34 &&
+        972 < mousepos.x && mousepos.x < 972 + 34 &&
         57 < mousepos.y && mousepos.y < 57 + 34
     ) {
         if(blueberrybuyable == false){
@@ -415,6 +439,28 @@ canvas.addEventListener('click', function(event) {
         bowl = bowlphase2
         scoreamplifier = scoreamplifier + 10
         allowblueberryoverlay = true
+        cherrybuyable = true
+    }
+});
+
+canvas.addEventListener('click', function(event) {
+    console.log(getMousePos(canvas, event))
+    const mousepos = getMousePos(canvas, event)
+    if(
+        1017 < mousepos.x && mousepos.x < 1017 + 34 &&
+        57 < mousepos.y && mousepos.y < 57 + 34
+    ) {
+        if(cherrybuyable == false){
+            return
+        }
+        if (score <= 9){
+            return
+        }
+        cherrybuyable = false
+        score = score - 10
+        bowl = bowlphase3
+        scoreamplifier = scoreamplifier + 20
+        allowcherryoverlay = true
 
     }
 });
