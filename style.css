@@ -76,6 +76,14 @@ canvas {
     cursor: url('sledgehammer_cursor.png') auto
 }
 
+.hovermenu{
+    width: 100px;
+    height: 100px;
+    display: none;
+}
+
+
+
 
 
 
