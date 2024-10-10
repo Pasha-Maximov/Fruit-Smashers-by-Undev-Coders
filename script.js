@@ -30,7 +30,7 @@ blueberry.src = 'blueberry.png';
 
 const cherry = new Image();
 cherry.src = 'cherry.png';
-
+let audioplaying = false
 let bowlheight = 200
 let bowlwidth = 200
 let bowlX = 97.5
@@ -486,7 +486,12 @@ canvas.addEventListener('click', function(event) {
         setTimeout(clicksizebowl, 150)
         setTimeout(bowlsizetransition, 400)
         setTimeout(resetbowl, 550)
-        
+        if(audioplaying == false) {
+            const audio = new Audio('musik/fruitsmashsong.mp3');
+            
+            audio.play();
+            audioplaying = true
+        }
     }
 });
 function getMousePos(canvas, evt) {
