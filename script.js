@@ -7,6 +7,9 @@ const HEIGHT = 650;
 canvas.width = WIDTH;
 canvas.height = HEIGHT;
 
+const sledgehammer_cursor = new Image();
+sledgehammer_cursor.src = 'sledgehammer_cursor.png';
+
 const bowlphase0 = new Image();
 bowlphase0.src = 'bowlphase0.png';
 
@@ -44,6 +47,8 @@ let scoreamplifier = 1
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    
     ctx.fillStyle = 'green';
     ctx.fillRect(400, 25, 315, 600);
 
@@ -335,7 +340,6 @@ function draw() {
     ctx.drawImage(cherry, 1015, 55, 36, 36)
 
 
-
     if(blueberrybuyable == false && allowblueberryoverlay == false) {
         ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'
         ctx.fillRect(972, 57, 34, 34)
@@ -423,6 +427,8 @@ canvas.addEventListener('click', function(event) {
         blueberrybuyable = true
     }
 });
+
+
 
 canvas.addEventListener('click', function(event) {
     console.log(getMousePos(canvas, event))
