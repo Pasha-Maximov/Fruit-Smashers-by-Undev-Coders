@@ -19,7 +19,7 @@ const bowlphase1 = new Image();
 bowlphase1.src = 'bowlphase1.png';
 
 const bowlphase2 = new Image();
-bowlphase2.src = 'bowlphase2.png';
+bowlphase2.src = 'bowlphase2.png';//hi
 
 const bowlphase3 = new Image();
 bowlphase3.src = 'bowlphase3.png';
