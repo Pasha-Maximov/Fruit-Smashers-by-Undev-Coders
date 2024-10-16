@@ -1,6 +1,8 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
+const audio = new Audio('musik/fruitsmashsong.mp3');
+            const audio2 = new Audio('musik/Fruit_smasher.mp3');
 
 const WIDTH = 1115;
 const HEIGHT = 650;
@@ -30,7 +32,6 @@ blueberry.src = 'blueberry.png';
 
 const cherry = new Image();
 cherry.src = 'cherry.png';
-let audioplaying = false
 let bowlheight = 200
 let bowlwidth = 200
 let bowlX = 97.5
@@ -44,6 +45,9 @@ let allowblueberryoverlay = false
 let cherrybuyable = false
 let allowcherryoverlay = false
 let scoreamplifier = 1
+let drawcranmenu = false
+let audiostarted = false
+let audioplaying = false
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -473,7 +477,9 @@ canvas.addEventListener('click', function(event) {
 
     }
 });
-
+function playaudio() {
+    audio.play();
+}
 canvas.addEventListener('click', function(event) {
     console.log(getMousePos(canvas, event))
     const mousepos = getMousePos(canvas, event)
@@ -487,13 +493,17 @@ canvas.addEventListener('click', function(event) {
         setTimeout(bowlsizetransition, 400)
         setTimeout(resetbowl, 550)
         if(audioplaying == false) {
-            const audio = new Audio('musik/fruitsmashsong.mp3');
             
-            audio.play();
-            audioplaying = true
+            if (audioplaying == false) {
+                playaudio();
+                audiostarted = true
+                audioplaying = true
+            }
         }
     }
 });
+
+
 function getMousePos(canvas, evt) {
     const rect = canvas.getBoundingClientRect();
     return {
@@ -501,9 +511,22 @@ function getMousePos(canvas, evt) {
         y: evt.clientY - rect.top
     };
 }
+function playmusic() {
+    if (audioplaying == false) {
+    if(audiostarted == false) {
+        audio.play
+        setTimeout(96000, loopmusic)
+    }
+    if(audiostarted == true){
+        setTimeout(68000, audio2.play)
+        setTimeout(166000, audio.play)
+        loopmusic()
+    }}
+}
 
-
-
+function loopmusic() {
+    playmusic()
+}
 function gameloop() {
     
     draw();

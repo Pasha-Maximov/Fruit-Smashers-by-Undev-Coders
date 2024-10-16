@@ -77,56 +77,9 @@ canvas {
     background-size: 1800% 1800%;
     animation: srainbow 144s ease infinite;
     position: fixed;
-    cursor: url('sledgehammer_cursor.png'),auto;
+    cursor: url('sledgehammer_cursor.png') 45 20, none;
 }
 
-.hovermenu{
-    width: 100px;
-    height: 100px;
-    display: none;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-    left: 266px;
-    top: -251px;
-}
-
-.dropbtn {
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    width: 34px;
-    height: 34px;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: rgb(26, 26, 26);
-    padding: 4px;
-    border-style: solid;
-    border-width: 4px;
-    border-color: rgb(228, 228, 228);
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content b {
-    color: rgb(197, 197, 197);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {background-color: rgba(0, 0, 0, 0.5);}
-
-.dropdown:hover .dropdown-content {display: block; }
-
-.dropdown:hover .dropbtn {background-color: rgba(0, 0, 0, 0);}
 
 
 
