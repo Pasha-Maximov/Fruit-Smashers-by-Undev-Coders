@@ -527,6 +527,11 @@ function playmusic() {
 function loopmusic() {
     playmusic()
 }
+
+
+
+
+
 function gameloop() {
     
     draw();
