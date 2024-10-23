@@ -417,7 +417,7 @@ function draw() {
 function drawScore() {
     ctx.font = '25px Arial';
     ctx.fillStyle = 'black';
-    let text = `${score}`
+    let text = `${parseInt(score)}`
     let metrics = ctx.measureText(text);
     let textWidth = metrics.width;
     ctx.fillText(`${score}`, (187 - (textWidth / 2)), 140);
