@@ -591,10 +591,15 @@ function loopmusic() {
 
 
 
-
-
+let first_100_happened=false
+function check_for_first_100() {
+    if ( score >= 100 && first_100_happened==false){
+        console.log("first 100")
+    first_100_happened=true
+    }
+}
 function gameloop() {
-    
+ check_for_first_100();   
     draw();
     drawScore();
     drawprestigeamount();
