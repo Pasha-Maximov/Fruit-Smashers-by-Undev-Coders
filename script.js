@@ -2,7 +2,7 @@ const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
 const audio = new Audio('musik/fruitsmashsong.mp3');
-            const audio2 = new Audio('musik/Fruit_smasher.mp3');
+const audio2 = new Audio('musik/Fruit_smasher.mp3');
 
 const WIDTH = 1115;
 const HEIGHT = 650;
@@ -32,6 +32,7 @@ blueberry.src = 'blueberry.png';
 
 const cherry = new Image();
 cherry.src = 'cherry.png';
+
 let bowlheight = 200
 let bowlwidth = 200
 let bowlX = 97.5
@@ -48,6 +49,31 @@ let scoreamplifier = 1
 let drawcranmenu = false
 let audiostarted = false
 let audioplaying = false
+let fruitsbought = 0
+let prestigeamount = 999
+let prestigenum = 0
+
+function prestige() { 
+    prestigenum = prestigenum + 1
+    bowlheight = 200,
+    bowlwidth = 200,
+    bowlX = 97.5,
+    bowlY = 200,
+    bowl = bowlphase0,
+    score = 0,
+    cranberrybuyable = true,
+    allowcranberryoverlay = false,
+    blueberrybuyable = false,
+    allowblueberryoverlay = false,
+    cherrybuyable = false,
+    allowcherryoverlay = false,
+    scoreamplifier = scoreamplifier + ((scoreamplifier / 3) - fruitsbought);
+    drawcranmenu = false,
+    audiostarted = false,
+    audioplaying = false,
+    prestigeamount = prestigeamount + (((prestigeamount + 1) * prestigenum) * fruitsbought)
+    fruitsbought = 0
+}
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -80,6 +106,8 @@ function draw() {
     ctx.fillRect(425, 360, 54, 4);
     ctx.fillRect(475, 360, 4, 54);
     ctx.fillRect(425, 410, 54, 4);
+
+    
 
     ctx.fillStyle = 'rgba(200, 200, 200, 1';
     ctx.fillRect(495, 360, 4, 54);
@@ -268,6 +296,14 @@ function draw() {
     ctx.fillRect(685, 265, 4, 54);
     ctx.fillRect(635, 315, 54, 4);
 
+    //prestige button
+
+    ctx.fillStyle = 'rgba(200, 200, 200, 1';
+    ctx.fillRect(150, 565, 108, 27);
+    ctx.fillStyle = 'rgba(0, 0, 0, 1';
+    ctx.font = '25px ariel'
+    ctx.fillText('prestige', 160, 585)
+
     //fruits(icon outline)
 
     ctx.fillStyle = 'rgba(255, 255, 255, 1';
@@ -331,7 +367,7 @@ function draw() {
     ctx.fillStyle = 'white'
     ctx.font= '30px bold arial'
     ctx.fillText('Fruit Salad', 130, 100);
-    
+     
 
     ctx.fillStyle = 'white'
     ctx.font= '28px bold arial'
@@ -387,6 +423,15 @@ function drawScore() {
     ctx.fillText(`${score}`, (187 - (textWidth / 2)), 140);
 }
 
+function drawprestigeamount() {
+    ctx.font = '15px Arial';
+    ctx.fillStyle = 'black';
+    let text = `To Prestige, score must at least be: ${prestigeamount}`
+    let metrics = ctx.measureText(text);
+    let textWidth = metrics.width;
+    ctx.fillText(`To Prestige, score must at least be: ${prestigeamount}`, (187 - (textWidth / 2)), 620);
+}
+
 function resetbowl() {
     bowlheight = 200
     bowlwidth = 200
@@ -429,6 +474,7 @@ canvas.addEventListener('click', function(event) {
         scoreamplifier = scoreamplifier + 2
         allowcranberryoverlay = true
         blueberrybuyable = true
+        fruitsbought = fruitsbought + 1
     }
 });
 
@@ -453,6 +499,7 @@ canvas.addEventListener('click', function(event) {
         scoreamplifier = scoreamplifier + 10
         allowblueberryoverlay = true
         cherrybuyable = true
+        fruitsbought = fruitsbought + 1
     }
 });
 
@@ -474,9 +521,22 @@ canvas.addEventListener('click', function(event) {
         bowl = bowlphase3
         scoreamplifier = scoreamplifier + 20
         allowcherryoverlay = true
-
+        fruitsbought = fruitsbought + 1
     }
 });
+
+canvas.addEventListener('click', function(event) {
+    console.log(getMousePos(canvas, event))
+    const mousepos = getMousePos(canvas, event)
+    if(
+        150 < mousepos.x && mousepos.x < 150 + 108 &&
+        565 < mousepos.y && mousepos.y < 565 + 27
+    ) {
+        if (score >= prestigeamount) {
+        prestige();
+    }}
+});
+
 function playaudio() {
     audio.play();
 }
@@ -536,6 +596,7 @@ function gameloop() {
     
     draw();
     drawScore();
+    drawprestigeamount();
 
 
     requestAnimationFrame(gameloop); 
