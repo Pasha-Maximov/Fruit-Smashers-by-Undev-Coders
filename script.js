@@ -597,9 +597,24 @@ function check_for_first_100() {
         console.log("first 100")
     first_100_happened=true
     }
+}let $$$1000_happened=false
+function check_for_$$$1000() {
+    if ( score >= 1000 && $$$1000_happened==false){
+        console.log("$$$1000")
+        $$$1000_happened=true
+    }
+}
+let A100000_happened=false
+function check_for_A100000() {
+    if ( score >= 100000 && A100000_happened==false){
+        console.log("A100000")
+        A100000_happened=true
+    }
 }
 function gameloop() {
- check_for_first_100();   
+ check_for_first_100();
+ check_for_$$$1000();
+ check_for_A100000();
     draw();
     drawScore();
     drawprestigeamount();
@@ -609,4 +624,4 @@ function gameloop() {
 }
 
 
-gameloop();
+gameloop()
