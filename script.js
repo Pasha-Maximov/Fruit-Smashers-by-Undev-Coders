@@ -618,11 +618,19 @@ function check_for_Millions() {
         Millions_happened=true
     }
 }
+let FAT_STACK_happened=false
+function check_for_FAT_STACK() {
+    if ( score >= 10000000000 && FAT_STACK_happened==false){
+        console.log("FAT STACK")
+        FAT_STACK_happened=true
+    }
+}
 function gameloop() {
  check_for_first_100();
  check_for_$$$1000();
  check_for_A100000();
- check_for_Millions();   draw();
+ check_for_Millions();
+ check_for_FAT_STACK();   draw();
     drawScore();
     drawprestigeamount();
 
