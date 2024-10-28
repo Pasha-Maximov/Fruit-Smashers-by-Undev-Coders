@@ -611,11 +611,18 @@ function check_for_A100000() {
         A100000_happened=true
     }
 }
+let Millions_happened=false
+function check_for_Millions() {
+    if ( score >= 10000000 && Millions_happened==false){
+        console.log("Millions")
+        Millions_happened=true
+    }
+}
 function gameloop() {
  check_for_first_100();
  check_for_$$$1000();
  check_for_A100000();
-    draw();
+ check_for_Millions();   draw();
     drawScore();
     drawprestigeamount();
 
